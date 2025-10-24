@@ -1,0 +1,13 @@
+name: explainable-ai-env
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - shap
+  - lime
+  - xgboost
+  - scikit-learn
+  - plotly
+  - dash
+  - jupyter
+  - pip
