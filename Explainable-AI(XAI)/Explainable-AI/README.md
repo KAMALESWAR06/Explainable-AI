@@ -1,31 +1,94 @@
-# Explainable AI for BMI-Based Diabetes Risk Prediction
-**Author:** Kamaleswar Urranki · Blekinge Institute of Technology, Sweden  
-**Course:** RMA 2515 Research Methodology (5.5 hp)  
-**Date:** March 2025  
+# 🧠 Explainable AI for BMI-Based Diabetes Risk Prediction
+**Author:** Kamaleswar Urranki  
+**Affiliation:** Blekinge Institute of Technology · Karlskrona, Sweden  
+**Course Context:** RMA 2515 — Research Methodology (5.5 hp)  
+**Timeline:** January – March 2025  
 
-## Overview
-This repository hosts the research artefacts for the paper **“Comparative Analysis of SHAP and LIME Methods in Explainable AI for BMI-Based Diabetes Risk Prediction.”**  
-It reproduces and extends the Explainable AI pipeline comparing SHAP and LIME methods applied to the PIMA Indian Diabetes dataset.
+---
 
-## Aim
-Evaluate how SHAP and LIME differentiate BMI’s impact on diabetes risk prediction and assess their relative stability, accuracy, and interpretability.
+## 🌍 Project Overview
+This research repository documents the complete experimental pipeline and analysis behind my study  
+**“Comparative Analysis of SHAP and LIME Methods in Explainable AI for BMI-Based Diabetes Risk Prediction.”**
 
-## Methodology
-- **Data Preprocessing:** imputation, Z-score normalization, duplicate removal.
-- **Modeling:** Logistic Regression & XGBoost.
-- **Explainability:** SHAP (TreeExplainer) for global + local interpretation, LIME (LimeTabularExplainer) for local surrogate models.
-- **Visualization:** Plotly + Dash dashboard.
+In an age where *trustworthy AI* defines the next frontier of healthcare analytics, this project bridges the gap between *black-box prediction* and *clinical transparency*.  
+The work explores **how Body Mass Index (BMI)** — a key physiological indicator — influences diabetes risk, and how **Explainable AI (XAI)** frameworks like **SHAP** and **LIME** can transform opaque predictions into interpretable medical insights.
 
-## Key Findings
+> 🔍 In simple terms: the system doesn’t just predict whether a person might have diabetes — it also tells *why*.
+
+---
+
+## 🎯 Research Vision
+> To build an interpretable, deployable, and reproducible **AI-driven decision support system** that empowers clinicians with transparent risk explanations — bridging data science with human-centric healthcare.
+
+**Core Question:**  
+*How do SHAP and LIME differ in explaining BMI’s influence on diabetes prediction models, and what implications does that have for clinical trust and real-time deployment?*
+
+---
+
+## ⚙️ Methodology Pipeline
+
+### 🩺 1. Data Foundation  
+Dataset: **PIMA Indian Diabetes Dataset** (Kaggle)  
+Structured health records containing 8 biomedical features, including BMI, glucose, insulin, and blood pressure.
+
+**Key Preprocessing Steps**
+- Imputation for missing BMI and glucose values.  
+- Outlier removal via **Z-score normalization**.  
+- Duplicate pruning and consistent label encoding.  
+- Feature correlation using **Pearson’s r** for interpretability focus.
+
+---
+
+### 🤖 2. Model Engineering
+**Baseline Learners**
+- Logistic Regression – transparent and linearly interpretable.
+- XGBoost – nonlinear gradient-boosted ensemble for higher accuracy.
+
+**Performance Metrics**
+- Accuracy, Precision, Recall, F1, and AUC.
+- Validation split (70 / 15 / 15) ensures reproducibility.
+
+---
+
+### 🧩 3. Explainability Layer
+#### 🟩 SHAP (Shapley Additive Explanations)
+- Theoretical backbone: cooperative game theory.  
+- Computes *global + local* attributions.  
+- Provides consistent fairness-based credit assignment for each feature.  
+- Visualization: summary plots, dependence plots, and force plots.
+
+#### 🟨 LIME (Local Interpretable Model-agnostic Explanations)
+- Builds local surrogate models to mimic the black-box behavior around individual samples.  
+- Provides *case-by-case* reasoning for clinicians reviewing patient-specific predictions.  
+- Visualization: local bar-chart attribution maps.
+
+---
+
+### 📊 4. Visualization & Interaction
+A lightweight **Plotly + Dash web dashboard** provides:
+- Real-time feature importance comparisons between SHAP and LIME.  
+- Interactive sliders for exploring BMI thresholds and their influence on risk probability.  
+- Exportable charts for academic presentation or clinical evaluation.
+
+*(Live demo hosted on localhost:8050 when run via `python dashboard/app.py`)*
+
+---
+
+## 🔬 Experimental Highlights
+
 | Metric | SHAP | LIME |
 |:--|:--:|:--:|
-| Explanation Type | Global + Local | Local |
-| Stability | High | Medium |
-| Speed | Moderate | High |
-| BMI Importance Score | 0.45 | 0.40 |
+| Explanation Type | Global + Local | Local-only |
+| Stability | ✅ High (consistent across runs) | ⚠️ Medium (perturbation-sensitive) |
+| Speed | ⚙️ Moderate | ⚡ High |
+| Clinical Interpretability | Robust & Quantitative | Intuitive but case-specific |
+| BMI Importance Score | **0.45** | **0.40** |
 
-## Societal Impact
-Transparent AI explanations enable clinicians to interpret model predictions confidently and identify at-risk individuals early.
+🧩 **Outcome:**  
+BMI consistently emerges as the most decisive feature influencing diabetes risk, with SHAP providing the mathematically rigorous justification, while LIME highlights individual nuances — together forming a holistic interpretability framework.
 
-## Citation
-> Urranki K. (2025). *Explainable AI for BMI-Based Diabetes Risk Prediction: Comparative Analysis of SHAP and LIME.* Blekinge Institute of Technology.
+---
+
+## 🌐 System Architecture Snapshot
+
+
