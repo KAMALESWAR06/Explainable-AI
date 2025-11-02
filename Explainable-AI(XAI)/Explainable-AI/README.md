@@ -1,5 +1,5 @@
 # 🧠 Explainable AI for BMI-Based Diabetes Risk Prediction
-**Author:** Kamaleswar Urranki  
+**Author:** Kamaleswar Urranki, Vineeth Dhagey  
 **Affiliation:** Blekinge Institute of Technology · Karlskrona, Sweden  
 **Course Context:** RMA 2515 — Research Methodology (5.5 hp)  
 **Timeline:** January – March 2025  
